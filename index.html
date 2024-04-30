@@ -40,10 +40,10 @@
             const walletAddress = walletInput.value.trim();
             if (walletDictionary.has(walletAddress)) {
                 resultDiv.textContent = `Адрес "${walletAddress}" найден в словаре.`;
-                resultDiv.className = 'found';
+                resultDiv.style.color = 'green';
             } else {
                 resultDiv.textContent = `Адрес "${walletAddress}" не найден в словаре.`;
-                resultDiv.className = 'not-found';
+                resultDiv.style.color = 'red';
             }
             resultDiv.style.display = 'block';
         });
