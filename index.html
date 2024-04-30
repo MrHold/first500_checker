@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallet Address Checker</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
         .container {
             text-align: center;
         }
         #walletInput {
             padding: 10px;
             font-size: 16px;
+            margin-bottom: 10px;
         }
         #result {
-            margin-top: 20px;
             font-size: 18px;
             display: none;
+        }
+        .found {
+            color: green;
+        }
+        .not-found {
+            color: red;
         }
     </style>
 </head>
@@ -41,8 +40,10 @@
             const walletAddress = walletInput.value.trim();
             if (walletDictionary.has(walletAddress)) {
                 resultDiv.textContent = `Адрес "${walletAddress}" найден в словаре.`;
+                resultDiv.className = 'found';
             } else {
                 resultDiv.textContent = `Адрес "${walletAddress}" не найден в словаре.`;
+                resultDiv.className = 'not-found';
             }
             resultDiv.style.display = 'block';
         });
